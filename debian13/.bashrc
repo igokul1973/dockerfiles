@@ -215,19 +215,6 @@ alias ssh_mac_mini_m4_remote="ssh -p 2224 igor@asusrouter"
 # alias ssh_fileserver="ssh Igor@IgorBookWorld"
 alias ssh_fileserver="ssh Igor@mybook"
 
-# Sites
-alias www="cd /var/www"
-alias dock="cd /var/www/docker/"
-alias drc="cd /var/www/docker/docker-environment-alpha"
-alias bron="cd /var/www/bron"
-alias dtreat="cd /var/www/sibedge/treatment.l"
-alias dgym="cd /var/www/docker/gym"
-alias play="cd /var/www/playground"
-alias edu="cd /var/www/luxoft/sberbank/edupower"
-alias school="cd /var/www/luxoft/sberbank/edu-front/front/packages/school21"
-alias student="cd /var/www/luxoft/sberbank/s21-application"
-alias mhm="cd /var/www/manhattanman/manhattanman.site"
-
 # Bash
 alias bedit="vim ~/.bashrc && source ~/.bashrc"
 alias q="exit"
