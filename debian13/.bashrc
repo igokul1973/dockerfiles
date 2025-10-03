@@ -58,12 +58,12 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     if [[ ${EUID} == 0 ]] ; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
+        PS1="${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\h\[\033[01;34m\] \W\[\033[01;32m\]\$(parse_git_branch) \[\033[01;34m\]\$\[\033[00m\] "
     else
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
+        PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;32m\]\w \$(parse_git_branch) \[\033[01;34m\]\$\[\033[00m\] "
     fi
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h \w \$ '
+    PS1="${debian_chroot:+($debian_chroot)}\u@\h \w \$ "
 fi
 unset color_prompt force_color_prompt
 
@@ -242,4 +242,8 @@ lar () {
   else
     microk8s kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 microk8s kubectl get --ignore-not-found --show-kind -n "$user_input"
   fi
+}
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
