@@ -172,9 +172,9 @@ alias dcu="doccom up -d"
 alias dcub="doccom up -d --no-deps --build"
 # Docker Container
 alias doccon="docker container"
-alias docce="doccon exec -it"
-alias doccls="doccon ls"
-alias docclsa="doccon ls -a"
+alias dce="doccon exec -it"
+alias dcls="doccon ls"
+alias dclsa="doccon ls -a"
 # Docker Image
 alias docim="docker image"
 alias dils="docim ls"
