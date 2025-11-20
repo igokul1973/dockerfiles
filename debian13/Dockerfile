@@ -27,6 +27,7 @@ RUN apt-get update && \
     liblzma-dev \
     lsb-release \
     openssh-client \
+    procps \
     vim \
     git \
     git-lfs
